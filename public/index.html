@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-chache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0" />
+    <title>Pixel Canvas&#127912</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="init()">
+    <div class="main">
+
+        <div class="topbar">
+            <h1>PixelCanvas&#127912</h1>
+
+            <div class="timer">
+                <div class="timer_text">
+                    username: 
+                    <span id="isLoggedin"> guest </span>
+                </div>
+                <div class="timer_text">
+                    <span id="mins_left"> 0 </span>
+                    min(s)
+                </div>
+                <div class="timer_text">
+                    <span id="secs_left"> 0 </span>
+                    sec(s)
+                </div>
+            </div>
+            
+            
+            <button class="profile" onClick="createPopupWin('https://pixel-canvas-usc.web.app/login.html',
+            'login', 1200, 750);"><i class="fa fa-user fa-2x"></i></button>
+            
+
+        </div>
+
+        <canvas id="myCanvas" width="1000" height="500"></canvas>
+        <div class="palette">
+            <button id="pink" class="paletteB"></button>
+            <button id="red" class="paletteB"></button>
+            <button id="orange" class="paletteB"></button>
+            <button id="yellow" class="paletteB"></button>
+            <button id="green" class="paletteB"></button>
+            <button id="cyan" class="paletteB"></button>
+            <button id="blue" class="paletteB"></button>
+            <button id="purple" class="paletteB"></button>
+            <button id="black" class="paletteB"></button>
+            <button id="grey" class="paletteB"></button>
+            <button id="white" class="paletteB"></button>
+        </div>
+    </div>
+
+
+    <script src="Canvas.js"></script>
+    <script src="MouseEffect.js"></script>
+    <script>
+    
+    function createPopupWin(pageURL, pageTitle,
+        popupWinWidth, popupWinHeight) {
+        var left = (screen.width - popupWinWidth) / 2;
+        var top = (screen.height - popupWinHeight) / 4;
+        
+        var myWindow = window.open(pageURL, pageTitle, 
+                'resizable=yes, width=' + popupWinWidth
+                + ', height=' + popupWinHeight + ', top='
+                + top + ', left=' + left);
+    }   
+
+    </script>
+</body>
+</html>

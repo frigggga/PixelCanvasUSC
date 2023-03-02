@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <img
+        id="noiseimg"
+        src="resource/noise-texture-1936.jpeg"
+    />
+    
+    <main
+        id="maincontainer"
+        class="display"
+    >
+        <div>
+            <h1>
+                SIGN UP
+            </h1>
+            <form
+                id="signupform"
+            >
+                <span>
+                    <input
+                        type="username"
+                        id=username
+                        placeholder="username"
+                        autocomplete="off"
+                    />
+                    <i 
+                        id="usericon"
+                        class="fa fa-user-circle fa-2x"></i>
+                </span>
+                <span>
+                    <input
+                        type="email"
+                        id=email
+                        placeholder="youremail@google.com"
+                        autocomplete="off"
+                    />
+                    <i 
+                        id="emailicon"
+                        class="fa fa-envelope fa-2x"></i>
+                </span>
+                <span>
+                    <input
+                        type="password"
+                        id=password
+                        placeholder="password"
+                        autocomplete="off"
+                    />
+                    <i 
+                        id="passwordicon"
+                        class="fa fa-key fa-2x"></i>
+                </span>
+                <span>
+                    Already an account?
+                    <a
+                        href="/login.html"
+                    >
+                        Sign In
+                    </a>
+                </span>
+                <input type="button" value='Sign up'  style="background: linear-gradient(0deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55));"onclick="test()"/>
+            </form>
+        </div>
+    </main>
+    <div
+        id="redbackground"
+    >
+    </div>
+    <div
+        id="yellowbackground"
+    >
+    </div>
+</body>
+
+<script type="text/javascript">
+
+    async function test(){
+        
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        console.log(username + email + password);
+        
+        let requestUrl = "https://pixel-canvas-usc.ngrok.io/user/register?username=" + username
+            + "&email=" + email + "&password=" + password;
+
+        try {
+            let response = await fetch(requestUrl);
+            let result = await response.text()
+            console.log(result);
+            if(result === 'success')
+            {
+                window.location.href="login.html";
+            } else{
+                alert(result);
+            }
+        } catch (error) {
+            console.log('request failed', error);
+        }
+}
+    
+
+</script>
+
+</html>

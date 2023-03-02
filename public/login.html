@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <img
+        id="noiseimg"
+        src="resource/noise-texture-1936.jpeg"
+    />
+
+    <main
+        id="maincontainer"
+        class="display"
+    >
+        <div>
+            <h1>
+                LOGIN
+            </h1>
+            <form
+                id="loginform"
+            >
+                <h2>Log in to your account</h2>
+                <span>
+                    <input
+                        type="username"
+                        id='username'
+                        placeholder="username"
+                        autocomplete="off"
+                    />
+                    <i
+                        id="usericon"
+                        class="fa fa-user-circle fa-2x"></i>
+                </span>
+                <span>
+                    <input
+                        type="email"
+                        id=email
+                        placeholder="youremail@google.com"
+                        autocomplete="off"
+                    />
+                    <i
+                        id="emailicon"
+                        class="fa fa-envelope fa-2x"></i>
+                </span>
+                <span>
+                    <input
+                        type="password"
+                        id=password
+                        placeholder="password"
+                        autocomplete="off"
+                    />
+                    <i
+                        id="passwordicon"
+                        class="fa fa-key fa-2x"></i>
+                </span>
+                <span>
+                    Need an account?
+                    <a
+                        href="/signup.html"
+                    >
+                        Sign up
+                    </a>
+                </span>
+                <span id="error"> </span>
+                <input type="button" value='Log in'  style="background: linear-gradient(0deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55));"onclick="test()"/>
+            </form>
+        </div>
+    </main>
+    <div
+        id="redbackground"
+    >
+    </div>
+    <div
+        id="yellowbackground"
+    >
+    </div>
+</body>
+
+<script type="text/javascript">
+   function test(){
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        console.log('username' + username)
+        console.log('email' + email)
+        console.log('password' + password)
+        if(username=='')
+        {
+            alert( "Please enter a username")
+        }
+        if(email=='')
+        {
+            alert( "Please enter a email")
+        }
+        if(password=='')
+        {
+            alert( "Please enter a password")
+        }
+
+
+        fetch("https://pixel-canvas-usc.ngrok.io/user/login?username=" + username + "&email=" + email + "&password=" + password).then(res=>res.text()).then(res => {
+            if (res === 'success') {
+                console.log('success')
+                var customerId = username;//get user email
+                sessionStorage.customerId = customerId;//store email into local data
+                window.location='/index.html';
+            }else{
+                 error.innerHTML = "<span style='color: red;'>"+
+                         "Please enter a correct username or password</span>"
+                 console.log('request failed')
+             }
+        })
+   }
+
+
+
+</script>
+</html>

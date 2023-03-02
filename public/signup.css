@@ -1,0 +1,152 @@
+/* @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css); */
+
+#noiseimg{
+    width:100%;
+    height: 100%;
+    pointer-events: none;
+    left:0;
+    top:0;
+    position: fixed;
+    opacity: 0.15;
+}
+
+header{
+    position: absolute;
+    background: rgba(255, 255, 255, 0.55);
+    height:55px;
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    top:0;
+    left:0;
+}
+
+header button{
+    position: absolute;
+    right:25px;
+    top:14px;
+    background: rgba(217, 217, 217, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+header button i{
+    font-size: 20px !important;
+    opacity: 0.8;
+}
+
+.nondisplay{
+    display: none;
+}
+.display{
+    display: initial;
+}
+
+
+main{
+    position: absolute;
+    left: 30%;
+    top: 30px;
+    width: 40%;
+    height: calc(100%-55px);
+    text-align: center;
+    font-family: "PT Sans Narrow";    
+}
+
+main>div>h1{
+    margin-top: 90px;
+    font-size: 48px;
+}
+    
+#signupform{
+    margin-top: -20px;
+    display: block;
+    width: 100%;
+}
+#signupform>*{
+    display: block;
+    width: 100%;
+}
+
+
+#signupform input{
+    width: 100%;
+    font-size: 24px;
+    margin-top: 30px;
+    border: none;
+    font-family: "PT Sans Narrow";
+    border-bottom: solid rgba(0, 0, 0, 0.62) 2px;
+    background:none;
+    padding: 4px;
+}
+
+#signupform #emailicon{
+    display: inline;
+    position: relative;
+    font-size: 25px;
+    opacity: 0.5;
+    top: -34px;
+    right: 4px;
+
+
+}
+
+#signupform #usericon{
+    display: inline;
+    position: relative;
+    font-size: 25px;
+    opacity: 0.5;
+    top: -34px;
+    right: 4px;
+
+
+}
+
+#signupform #passwordicon{
+    display: inline;
+    position: relative;
+    font-size: 25px;
+    opacity: 0.5;
+    top: -34px;
+    right: 4px;
+
+
+}
+#signupform>span{
+    text-align: right;
+    font-size: 18px;
+}
+
+input[type="button"], button{
+    margin-top: 60px;
+    height:46px;
+    font-family: "PT Sans Narrow";
+    font-size: 28px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border:none;
+    border-radius: 4px; 
+}
+
+#redbackground{
+    position: fixed;
+    width: 1200px;
+    height: 1200px;
+    left: 101px;
+    top: -208px;
+    z-index: -10;
+
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 0, 0, 0.7) 0%, rgba(255, 0, 0, 0) 100%);
+    filter: blur(140px);
+}
+
+#yellowbackground{
+    position: fixed;
+    width: 1200px;
+    height: 1200px;
+    right: 69px;
+    top: 148px;
+    z-index: -10;
+    background: radial-gradient(50% 50% at 50% 50%, #FFC72C 0%, rgba(255, 199, 44, 0) 100%);
+    filter: blur(140px);
+}
